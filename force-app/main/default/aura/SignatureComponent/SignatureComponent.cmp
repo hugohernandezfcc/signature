@@ -12,7 +12,7 @@
         <div style="text-align: center;">
         <div style="margin-left:22%">  
         <lightning:buttonIcon iconName="utility:edit" alternativeText="Edit" onclick="{!c.edit}" size="x-small"></lightning:buttonIcon>
-        </div>
+            </div>
             <img src="{! v.baseurl  + v.signature}" style="border-bottom:1px solid #999;"/>
         </div>     
     </aura:renderIf> 
