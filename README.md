@@ -17,7 +17,7 @@ Start from **Position yourself on the project folder** and push all my resources
 
 That's all.
 
-	![](signature.png)
+![](signature.png)
 
 
 Happy coding.
