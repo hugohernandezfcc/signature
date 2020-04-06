@@ -1,0 +1,31 @@
+<aura:component controller="Signature"  implements="force:appHostable,forceCommunity:availableForAllPageTypes,force:lightningQuickAction,flexipage:availableForAllPageTypes,force:hasRecordId,force:hasSObjectName">
+    <ltng:require afterScriptsLoaded="{!c.Init}"/>
+    <aura:attribute name="id" type="String" default="" access="global" />
+    <aura:attribute name="signature" type="String" access="global" />
+    <aura:attribute name="IdRec" type="String" access="global" />
+    <aura:attribute name="baseurl" type="String" access="global" />
+    <aura:attribute name="view" type="Boolean" default="true"/>
+    <aura:attribute name="viewEdit" type="Boolean" default="false"/>   
+    <aura:attribute name="moveCount" type="Integer" default="0"/>  
+    
+    <aura:renderIf isTrue="{!v.view}">
+        <div style="text-align: center;">
+        <div style="margin-left:22%">  
+        <lightning:buttonIcon iconName="utility:edit" alternativeText="Edit" onclick="{!c.edit}" size="x-small"></lightning:buttonIcon>
+        </div>
+            <img src="{! v.baseurl  + v.signature}" style="border-bottom:1px solid #999;"/>
+        </div>     
+    </aura:renderIf> 
+     <div id="edit" display="none">
+            <div style="text-align: center;">
+                <div style="margin-left:25%">  
+                	<lightning:buttonIcon iconName="utility:close" alternativeText="Close" onclick="{!c.close}" size="x-small"></lightning:buttonIcon>
+                </div><br></br>
+                <canvas aura:id="can" style="border:2px dotted #777;background: transparent; width:100%, height:100%"></canvas>
+            </div>
+            <div style="text-align: center;margin: 2px;">
+                <button class="slds-button slds-button_brand" onclick="{!c.erase}">Clear</button>
+                <button class="slds-button slds-button_brand" onclick="{!c.saved}">Save</button>
+            </div>      
+    </div>
+</aura:component>
